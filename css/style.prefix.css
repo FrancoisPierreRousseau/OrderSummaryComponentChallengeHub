@@ -1,0 +1,1019 @@
+@charset "UTF-8";
+/*------------------------------------*\
+  #UTIL-NORMALIZE
+\*------------------------------------*/
+/*
+ * 1. Corriger la hauteur des lignes dans tous les navigateurs.
+ * 2. Empêcher l'ajustement de la taille de la police après un changement d'orientation dans iOS.
+ */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+/*
+ * Supprime la marge dans tous les navigateurs.
+ */
+body {
+  margin: 0;
+}
+
+/*
+ * Corrige la taille de la police et la marge sur les éléments `h1`
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/*
+ * 1. Modifie les styles de police dans tous les navigateurs
+ * 2. Supprime la marge dans Firefox et Safari.
+ */
+button {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/**
+ * Suppression de l'héritage de la transformation du texte dans Edge, Firefox et IE.
+*/
+button {
+  text-transform: none;
+}
+
+/*
+ * Correction de l'impossibilité de styliser les types cliquables dans iOS et Safari.
+ */
+button {
+  -webkit-appearance: button;
+}
+
+/*
+ * Supprime la bordure et le rembourrage intérieurs dans Firefox.
+ */
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/*
+ * Restaure les styles de mise au point non définis par la règle précédente.
+ */
+button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Couleur utilisée pour les éléments gris de l'interface utilisateur
+ * @type: Map
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Background color du body
+ * @type Color
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Couleur du texte du body.
+ * @type Color
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*------------------------------------*\
+  #SETTINGS-TYPOGRAPHY
+\*------------------------------------*/
+/*
+ * Famille de polices pour les éléments d'en-tête.
+ * @type String | List
+ */
+/*
+ * Poids de la police des en-têtes.
+ * @type String
+ */
+/*
+ * Couleur des en-têtes.
+ * @type Color
+ */
+/*
+ * Hauteur de ligne des en-têtes.
+ * @type Number
+ */
+/*
+ * Marge inférieure des en-têtes
+ * @type Number
+ */
+/*
+ * Styles d'en-têtes pour différentes tailles d'écran. Chaque valeur est une taille de police d'en-tête.
+ * @type Map
+ *
+ */
+/*
+ * Méthode de rendu du texte des en-têtes.
+ * @type String
+ */
+/*
+ * Style de police (par exemple, en italique) des en-têtes.
+ * @type String
+ */
+/*
+ * Hauteur de ligne du texte à l'intérieur des éléments `<p>`.
+ * @type Number
+ */
+/*
+ * Marge inférieure des paragraphes.
+ * @type Number
+ */
+/*
+ * Méthode de rendu du texte pour le texte du paragraphe.
+ * @type String
+ */
+/*
+ *  Couleur par défaut pour les liens.
+ *  @type Color
+ */
+/*
+ * Couleur par défaut des liens au survol.
+ * @type Color
+ */
+/*
+ * Décoration de texte par défaut pour les liens.
+ * @type String
+ */
+/*
+ * Décoration par défaut du texte des liens au survol.
+ * @type String
+ */
+/*
+ * Taille de police par défaut du corp de la page
+ * @type Number
+ */
+/*-----------------------------------------------*\
+  #TYPOGRAPHY-BASE
+
+  Application des styles de base de la typographie
+  ainsi que des classe utilitaires concernant les
+  en tête
+\*------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 100%;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  color: inherit;
+  text-rendering: optimizeLegibility;
+}
+
+/*
+ * Application de la font size des en tête et la génération
+ * des classes utilitaires
+ */
+h1, .h1 {
+  font-size: calc(1.425rem + 2.1vw);
+}
+@media (min-width: 1200px) {
+  h1, .h1 {
+    font-size: 3rem;
+  }
+}
+
+h2, .h2 {
+  font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 1200px) {
+  h2, .h2 {
+    font-size: 2.5rem;
+  }
+}
+
+h3, .h3 {
+  font-size: calc(1.31875rem + 0.825vw);
+}
+@media (min-width: 1200px) {
+  h3, .h3 {
+    font-size: 1.9375rem;
+  }
+}
+
+h4, .h4 {
+  font-size: calc(1.28125rem + 0.375vw);
+}
+@media (min-width: 1200px) {
+  h4, .h4 {
+    font-size: 1.5625rem;
+  }
+}
+
+h5, .h5 {
+  font-size: 1.25rem;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+}
+
+a {
+  line-height: inherit;
+  color: #3829e0;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+a img {
+  border: 0;
+}
+
+/*----------------------------------------*\
+  #TYPOGRAPHY-ALIGNEMENT
+\*----------------------------------------*/
+/*
+ * Génère l'ensemble des classe utilitaires permettant l'alignement du text
+ */
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Couleur utilisée pour les éléments gris de l'interface utilisateur
+ * @type: Map
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Background color du body
+ * @type Color
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Couleur du texte du body.
+ * @type Color
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*-----------------------------------------------------*\
+  #GLOBAL
+
+  ------------------------------
+  Application des styles global au sein des éléments
+  de l'ensemble de l'application
+\*----------------------------------------------------*/
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+/*
+ * Défini globalement la taille des boîtes pour gérer les largeurs de rembourrage et de bordure.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*
+ *  Styles du body par défaut
+ */
+body {
+  margin: 0;
+  padding: 0;
+  background: #e0e8ff;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #8a8a8a;
+}
+
+/*
+ * Réinitialise les styles de <bouton> créés par la plupart des navigateurs
+ */
+button {
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  background: transparent;
+  line-height: 1;
+  cursor: auto;
+}
+
+/*
+ * Faire en sorte que la réinitialisation hérite de font-family au lieu des paramètres sans-serif
+ */
+button {
+  font-family: inherit;
+}
+
+/*----------------------------------------*\
+  #PROTOTYPE-DISPLAY
+\*----------------------------------------*/
+/*
+ * Map contenant toute les classes utilitaires `display`
+ * @type Map
+ */
+/*
+ * Génère toutes les classes `display`
+ */
+.display-inline {
+  display: inline !important;
+}
+
+.display-inline-block {
+  display: inline-block !important;
+}
+
+.display-block {
+  display: block !important;
+}
+
+.display-table {
+  display: table !important;
+}
+
+.display-table-cell {
+  display: table-cell !important;
+}
+
+.display-flex {
+  display: flex !important;
+}
+
+/*----------------------------------------*\
+  #PROTOTYPE-SIZING
+\*----------------------------------------*/
+/*
+ * Map contenant toutes les classes de `sizing`.
+ * @type Map
+ */
+/*
+ * Map contenant toute les tailles
+ * @type Map
+ */
+.width-25 {
+  width: 25% !important;
+}
+
+.width-50 {
+  width: 50% !important;
+}
+
+.width-75 {
+  width: 75% !important;
+}
+
+.width-100 {
+  width: 100% !important;
+}
+
+.height-25 {
+  height: 25% !important;
+}
+
+.height-50 {
+  height: 50% !important;
+}
+
+.height-75 {
+  height: 75% !important;
+}
+
+.height-100 {
+  height: 100% !important;
+}
+
+/*-------------------------------------------------------------------*\
+  #PROTOTYPE-FLEX
+
+  Crée des classes utilitaires appropriées concernant les flexbox
+  ( source intéressante aller dans le code source de bootstrap dans
+  le dossier utilities, les fichiers utilities et bootstrap grid )
+  Note: La classe display flex est conçu dans le fichier display.
+  Théoriquement elle devrait être conçu au sein de ce fichier pour
+  plus de cohérence ( cela dépend pour qui ).
+\*--------------------------------------------------------------------*/
+/*
+ * Schema CSS de l'ensemble des propriétés des flex box ( qui me sont pour l'instant nécessaire) :
+ *   - Property: Nom de la property. Cela serra également le nom de la class par défaut
+ *   - Class: Customisation de la class. Si c'est appliqué, cela serra `class-property` (ex: flex-row)
+ *   - Values: Valeur que la property prendra ( une valeur = une classe utilitaire) :
+ *             Chaque clés au sein de ces valeurs feront partie intégrante de la classe
+ * @type Map
+ */
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.flex-column-reverse {
+  flex-direction: column-reverse !important;
+}
+
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.justify-content-end {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Couleur utilisée pour les éléments gris de l'interface utilisateur
+ * @type: Map
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Background color du body
+ * @type Color
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Couleur du texte du body.
+ * @type Color
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*--------------------------------------------------------*\
+  #PROTOTYPE-SPACER
+
+  Gère les espace globale au margin, padding ect.
+  Permet la cohérence des espacements entre les éléments.
+\*--------------------------------------------------------*/
+/*
+ * Espacement principal baser que la margin globale ( 1rem = font-size 100% = 16px )
+ * @type Number
+ */
+/*-------------------------------------------------------------------*\
+  #PROTOTYPE-SPACER
+
+  Crée des classes utilitaires appropriées concernant les espacement
+  ( source intéressante aller dans le code source de bootstrap dans
+  le dossier utilities, les fichiers utilities et bootstrap grid )
+\*--------------------------------------------------------------------*/
+/*
+ * Schema CSS de l'ensemble des propriétés des margin ( qui me sont pour l'instant nécessaire) :
+ *   - Property: Nom de la property. Cela serra également le nom de la class par défaut
+ *   - Class (optionnel): Customisation de la class. Si c'est appliqué, cela serra `class-property`
+ *                        (ex: display-flex)
+ *   - Base: Quelles sont les différents espacement impacté ( ici margin-top, margin-bottom ou les deux ect.).
+ *           1-Haut 2-droite 3-bas 4-gauche ( pour les margins)
+ *   - Values: Valeur que la property prendra ( une valeur = une classe utilitaire) :
+ *             Chaque clés au sein de ces valeurs feront partie intégrante de la classe
+ * @type Map
+ */
+.no-margin {
+  margin: 0 0 0 0 !important;
+}
+
+.margin {
+  margin: 1rem 1rem 1rem 1rem !important;
+}
+
+.margin-x {
+  margin: 0 1rem 0 1rem !important;
+}
+
+.margin-y {
+  margin: 1rem 1rem 0 0 !important;
+}
+
+.margin-top {
+  margin: 1rem 0 0 0 !important;
+}
+
+.margin-end {
+  margin: 0 1rem 0 0 !important;
+}
+
+.margin-bottom {
+  margin: 0 0 1rem 0 !important;
+}
+
+.margin-start {
+  margin: 0 0 0 1rem !important;
+}
+
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Couleur utilisée pour les éléments gris de l'interface utilisateur
+ * @type: Map
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Background color du body
+ * @type Color
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Couleur du texte du body.
+ * @type Color
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*------------------------------------*\
+  #SETTINGS-BUTTON-BLOCK
+\*------------------------------------*/
+/*
+ * Arrondis les bords des boutons
+ * @type Number
+ */
+/*
+ * Famille de polices pour les éléments de bouton.
+ * @type Font
+ */
+/*
+ * Rembourrage à l'intérieur des boutons.
+ * type List
+ */
+/*
+ * Marge autour des boutons.
+ * type Number
+ */
+/*
+ * Remplissage par défaut des boutons. Peut être soit `solid` soit `hollow`.
+ * @type Keyword
+ */
+/*
+ * Couleur de fond par défaut des boutons.
+ * @type Color
+ */
+/*
+ * Couleur de fond au survol pour les boutons.
+ * @type Color
+ */
+/*
+ * Couleur de la police pour les boutons.
+ * @type List
+ */
+/*
+ * Border for buttons, transparent by default
+ * @type List
+ */
+/*
+ * Transitions pour les boutons.
+ * @type List
+ */
+/*
+ * Taille des boutons.
+ * @type Number
+ */
+/*
+ * Poids des polices des boutons
+ * @type Number
+ */
+/*
+ * Ombre d'un bouton par défaut. Ici c'est avec la couleur primary
+ * Il serai judicieux de séparer les ombres au sein de classes utilitaires
+ * @type List
+ */
+/*------------------------------------*\
+  #COMPONENTS-BUTTON-BLOCK
+
+  Block de la méthodologie du B de BEM
+\*------------------------------------*/
+/*
+ * Structure principale des boutons par défaut
+ */
+.button {
+  border-radius: 0.8rem;
+  margin: 0 0 1rem 0;
+  padding: 1em 2.9em;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0px 9px 15px rgba(56, 41, 224, 0.25);
+}
+
+/*------------------------------------*\
+  #COMPONENTS-BUTTON-STATES
+\*------------------------------------*/
+/*
+ * États par défaut en mode désactivés des boutons
+ */
+.button.disabled, .button[disabled],
+.button.disabled:hover, .button[disabled]:hover,
+.button.disabled:focus, .button[disabled]:focus {
+  background-color: #3829e0;
+  color: #e0e8ff;
+}
+
+/*
+ * États de survole des boutons
+ */
+.button:hover,
+.button:focus {
+  background-color: #756af1;
+}
+
+/*------------------------------------------*\
+  #COMPONENTS-BUTTON-MODIFIER
+
+  Modifier du M de BEM
+\*------------------------------------------*/
+/*
+ * Modifie la couleur de la font et du background des boutons avec une couleur primaire
+ */
+.button--primary {
+  background: #3829e0;
+  color: #e0e8ff;
+}
+
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Couleur utilisée pour les éléments gris de l'interface utilisateur
+ * @type: Map
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Background color du body
+ * @type Color
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Couleur du texte du body.
+ * @type Color
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*-----------------------------------------------------------------*\
+  #SETTINGS-CARD
+
+  -----------------------------------------------------------------
+  Permet de paramétré les propriétés appliqué au sein des cartes
+\*-----------------------------------------------------------------*/
+/*
+ * Arrondis les bords des cards
+ * @type Number
+ */
+/*
+ * Couleur de fond par défaut des cards.
+ * @type Color
+ */
+/*
+ * Largeur maximal des cards
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée concernant le rembourrage des cards
+ * @type Number
+ */
+/*
+ * Couleur de police par défaut pour les cards.
+ * @type Color
+ */
+/*
+ * Ombre d'une carte par défaut.
+ * @type List
+ */
+/*
+ * La carte hérite de la marge globale
+ * @type Number
+ */
+/*------------------------------------*\
+  #SETTINGS-CARD-ELEMENTS
+\*------------------------------------*/
+/*
+ * Background image de l'élément background de la card pour le mobile
+ * @type List
+ */
+/*
+ * Valeur utilisée pour fixer la margin tout en haut et tou a gauche de la card
+ * 1. haut
+ * 2. droite
+ * 3. bas
+ * 4. gauche
+ * @type List
+ */
+/*
+ * Largeur utilisée pour l'élément background d'une card auquel je rajoute le
+ * padding que je multi par 2 afin que la width face 100% de la card
+ * @type Number
+ */
+/*
+ * Fixe les bords de l'élément background d'une card en haut à gauche et en haut à droite
+ * 1. coin en haut à gauche,
+ * 2. coin en haut à droite
+ * 3. coin en bas à droite
+ * 4. coin en bas à gauche
+ * @Number
+ */
+/*
+ * Valeur de la hauteur de la carte
+ * @type Number
+ */
+/*
+ * Valeur de la taille de police de la carte
+ * @Number
+ */
+/*
+ * Couleur du titre de la carte.
+ * @type Color
+ */
+/*-------------------------------------------------*\
+  #COMPONENTS-CARD-BLOCK
+
+  ---------------------------------------------------
+  Application de la structure global des cards
+\*---------------------------------------------------*/
+/*
+ * Structure principale des cards par défaut
+ */
+.card {
+  background: #f5f7ff;
+  border-radius: 0.8rem;
+  max-width: 19rem;
+  padding: 1rem;
+  color: #8a8a8a;
+  box-shadow: 0 0 calc(1.325rem + 0.9vw) rgba(0, 0, 0, 0.25);
+  margin: 1rem;
+}
+@media (min-width: 1200px) {
+  .card {
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25);
+  }
+}
+
+/*-------------------------------------------------*\
+  #COMPONENTS-CARD-ELEMENTS
+
+  ---------------------------------------------------
+  Style des elements se trouvant au sein des cartes
+\*---------------------------------------------------*/
+/*
+ * Structure principale de l'élément background d'une card
+ */
+.card__background {
+  background: url("../images/illustration-hero.svg") no-repeat center;
+  margin: -1rem 0rem 1rem -1rem;
+  height: 10rem;
+  width: calc(100% + 2rem);
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+
+.card__title {
+  font-size: calc(1.2624rem + 0.1488vw);
+  color: #1d2a49;
+}
+@media (min-width: 1200px) {
+  .card__title {
+    font-size: 1.374rem;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLmNvbmNhdC5jc3MiLCIuLi9zYXNzL3V0aWwvX25vcm1hbGl6ZS5zY3NzIiwiLi4vc2Fzcy9zZXR0aW5ncy9fZ2xvYmFsLnNjc3MiLCIuLi9zYXNzL3NldHRpbmdzL190eXBvZ3JhcGh5LnNjc3MiLCIuLi9zYXNzL3R5cG9ncmFwaHkvX2Jhc2Uuc2NzcyIsIi4uL25vZGVfbW9kdWxlcy9yZnMvc2Nzcy5zY3NzIiwiLi4vc2Fzcy90eXBvZ3JhcGh5L19hbGlnbmVtZW50LnNjc3MiLCIuLi9zYXNzL19nbG9iYWwuc2NzcyIsIi4uL3Nhc3MvcHJvdG90eXBlL19kaXNwbGF5LnNjc3MiLCIuLi9zYXNzL3Byb3RvdHlwZS9fc2l6aW5nLnNjc3MiLCIuLi9zYXNzL3Byb3RvdHlwZS9fZmxleC5zY3NzIiwiLi4vc2Fzcy9zZXR0aW5ncy9fc3BhY2VyLnNjc3MiLCIuLi9zYXNzL3Byb3RvdHlwZS9fc3BhY2VyLnNjc3MiLCIuLi9zYXNzL3NldHRpbmdzL19idXR0b24uc2NzcyIsIi4uL3Nhc3MvY29tcG9uZW50cy9fYnV0dG9ucy5zY3NzIiwiLi4vc2Fzcy9zZXR0aW5ncy9fY2FyZC5zY3NzIiwiLi4vc2Fzcy9jb21wb25lbnRzL19jYXJkLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsZ0JBQWdCO0FDQWhCOzt1Q0FBQTtBQUlBOzs7RUFBQTtBQUlBO0VBQ0UsaUJBQUE7RUFDQSw4QkFBQTtBRENGOztBQ0VBOztFQUFBO0FBR0E7RUFDRSxTQUFBO0FEQ0Y7O0FDRUE7O0VBQUE7QUFHQTtFQUNFLGNBQUE7RUFDQSxnQkFBQTtBRENGOztBQ0VBOzs7RUFBQTtBQUlBO0VBQ0Usb0JBQUE7RUFDQSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxTQUFBO0FEQ0Y7O0FDRUE7O0NBQUE7QUFHQTtFQUNFLG9CQUFBO0FEQ0Y7O0FDRUE7O0VBQUE7QUFHQTtFQUNFLDBCQUFBO0FEQ0Y7O0FDRUE7O0VBQUE7QUFHQTtFQUNFLGtCQUFBO0VBQ0EsVUFBQTtBRENG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 */

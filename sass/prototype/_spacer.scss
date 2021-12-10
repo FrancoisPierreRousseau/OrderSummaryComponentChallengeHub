@@ -97,7 +97,7 @@ $schema-spacer: (
   @each $position in $space-position {
     $spaces: list.set-nth($spaces, $position, $value);
   }
-  @debug $spaces;
+
   // Si `$key` est pas null alors le class serra composé de la clé
   $property-class-modifier: if($key != null, #{$key}, $property-class);
   // Si `$value`est null alors il n'y a pas de clés au sein de la map, donc `$value` vaudra `$key`
