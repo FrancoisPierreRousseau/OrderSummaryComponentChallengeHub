@@ -1,0 +1,16 @@
+@use "global";
+/*--------------------------------------------------------*\
+  #PROTOTYPE-SPACER
+
+  Gère les espace globale au margin, padding ect.
+  Permet la cohérence des espacements entre les éléments.
+\*--------------------------------------------------------*/
+
+/*
+ * Espacement principal baser que la margin globale ( 1rem = font-size 100% = 16px )
+ * @type Number
+ */
+$spacer: global.$margin;
+
+
+

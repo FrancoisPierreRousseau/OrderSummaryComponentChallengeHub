@@ -1,0 +1,33 @@
+/*----------------------------------------*\
+  #PROTOTYPE-SIZING
+\*----------------------------------------*/
+
+/*
+ * Map contenant toutes les classes de `sizing`.
+ * @type Map
+ */
+$prototype-sizing: (
+        width,
+        height
+) !default;
+
+/*
+ * Map contenant toute les tailles
+ * @type Map
+ */
+$prototype-sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+) !default;
+
+// Construction des classes utilitaires
+@each $sizing in $prototype-sizing{
+  @each $length, $percentage in $prototype-sizes{
+    .#{$sizing}-#{$length}{
+       #{$sizing}: $percentage !important;
+    }
+  }
+}
+

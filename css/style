@@ -1,0 +1,504 @@
+@charset "UTF-8";
+/*------------------------------------*\
+  #SECTION-COMPONENTS
+\*------------------------------------*/
+/**
+ * Typography
+ */
+/*------------------------------------*\
+  #SECTION-GLOBAL
+\*------------------------------------*/
+/**
+ * Global font size attribué aux tags <body> et <html>. Tout les navigateurs hériteront de cette
+ * valeur par défaut
+ * @type Number
+ */
+/**
+ * Line height par défaut. `$global-line-height`est de 24px tant que `$global-font-size` est de 16px
+ * @type Number
+ */
+/**
+ * Couleur utilisé pour les boutons, les liens ect. La palette doivent toujours avoir une couleur
+ * appelé primary
+ * @type Map
+ */
+/**
+ * Couleurs utilisées pour le gris ( light, medium, dark)
+ * @type Map
+*/
+/**
+  * Liste des polices au sein du body
+  * @type List
+*/
+/**
+  * Background color pour le body
+  * @type Color
+ */
+/**
+  * Global valeur margin pour les composantes
+  * @type Number
+ */
+/**
+ * Le cursor du bouton doit être en auto par défaut
+ * @type Keyword
+ */
+/**
+  * Global valeur padding pour les composantes
+  * @type Number
+ */
+/**
+  * Global font weight pour les fonts de normal
+  * @type Keyword | Number
+ */
+/**
+  * Global font weight pour les font en gras
+  * @type Keyword | Number
+ */
+/**
+  * Global valeur utilisé pour tout les éléments ayant un border radius
+  * @type Number
+ */
+/**
+  * Global text direction. On peut utilisé 'ltr' or 'rtl'.
+  * @type Keyword
+ */
+/**
+  * Active les flexbox pour les composants qui les supportent
+  * @type Boolean
+ */
+/**
+ *  Variable utilisé pour les text-direction
+*/
+/*------------------------------------*\
+  #SECTION-MATH
+\*------------------------------------*/
+/**
+  * Divise le `$divident` donnée par le `$divisor` donnée.
+  * @param {Number} $divident - le dividende.
+  * @param {Number} $divisor - le diviseur.
+  * @param {Number} $precision - La precision en décimales pour la division.
+  *
+  * @return {Number} Le produit de la division.
+ */
+/*------------------------------------*\
+  #SECTION-UNIT
+\*------------------------------------*/
+/*
+ * Supprime les unit (e.g. px, em, rem) d'une valeur, retourne le nombre seulement.
+ *
+ * @param {Number} $num - Nombre auquel il est attaché une unit (e.g. px, em, rem).
+ *
+ * @returns {Number} Le même nombre, sans unit.
+ */
+/* Converti une ou plusieurs pixels en rem.
+ * @param {Number|List} $values - Un ou plusieurs valeurs à convertir. Etre sûr de les séparer avec
+ *                                des espaces et non des virgules. Si tu as besoin une list séparer
+ *                                par des virgules, enveloppe la list avec des parenthése.
+ * @param {Number} $base [null] - La valeur de base a utiliser pour calculer le `rem`. Si le paramétre
+ *                                est `null`, la fonction faira référence à `$global-font-size` comme base.
+ * @returns {List} Une liste de valeur converties
+ */
+/*
+ * Convertie en une valeur en px en rem. *Toutes* les valeurs passées, indépendentes de l'unité,
+ * et assumé d'être une valeur en px. Par défaut, la base de la valeur en px pour calculer la valeur
+ * rem est pris à partir de `$global-font-size`.
+ * @access private
+ * @param {Number} $value - Valeur en px à convertir
+ * @param {Number} $base [null] - Base pour les conversions en pixels
+ * @returns {Number} Un nombre eb rem calculé basé sur la valeur donnée et la base est en px.
+ *                      Les valeurs rem sont transmise tel quel.
+*/
+/*------------------------------------*\
+  #SECTION-NUMBER
+\*------------------------------------*/
+/**
+ * Renvoie la ou les unités associées à un nombre. Les unités complexes sont triées en
+ * ordre alphabétique par numérateur et dénominateur.
+ *
+ * @example
+ * unit(100) => ""
+ * unit(100px) => "px"
+ * unit(3em) => "em"
+ * unit(10px * 5em) => "em*px"
+ * unit(10px * 5em / 30cm / 1rem) => "em*px/cm*rem"
+ * @overload unit($number)
+ * @param $number [Sass::Script::Value::Number]
+ * @return [Sass::Script::Value::String] The unit(s) of the number, as a
+ * quoted string
+ * @raise [ArgumentError] if `$number` isn't a number
+ */
+/**
+ *  Retourne si un nombre a des unités.
+ *
+ * @example
+ * unitless(100) => true
+ * unitless(100px) => false
+ * @overload unitless($number)
+ * @param $number [Sass::Script::Value::Number]
+ * @return [Sass::Script::Value::Bool]
+ * @raise [ArgumentError] if `$number` isn't a number
+ */
+/*------------------------------------*\
+  #SECTION-MAP
+\*------------------------------------*/
+/**
+ * Renvoie la position d'une valeur dans une liste. Si la valeur n'est pas trouvée,
+ * renvoie `null` à la place.
+ *
+ * Notez que contrairement à certains langages, le premier élément d'une liste Sass est un numéro
+ *  1, le deuxième numéro 2, et ainsi de suite.
+ *
+ * Cette fonction peut également renvoyer la position d'une paire dans une carte.
+ *
+ * @example
+ * index(1px solid red, solid) => 2
+ * index(1px solid red, dashed) => null
+ * index((width: 10px, height: 20px), (height 20px)) => 2
+ * @overload index($list, $value)
+ * @param $list [Sass::Script::Value::Base]
+ * @param $value [Sass::Script::Value::Base]
+ * @return [Sass::Script::Value::Number, Sass::Script::Value::Null] The
+ * 1-based index of `$value` in `$list`, or `null`
+ */
+/*------------------------------------*\
+  #SECTION-COLLECTION
+\*------------------------------------*/
+/*------------------------------------*\
+  #SECTION-VALUES
+\*------------------------------------*/
+/*
+ * Retourne une jointure des deux chaînes de caractères données `$str1` et `$str2`.
+ * Si les deux chaînes ne sont pas vides, elles sont séparées par `$delimiter`.
+ * @param {String} $str1 [null] - Première chaîne à joindre.
+ * @param {String} $str1 [null] - Deuxième chaîne à joindre.
+ * @param {String} $delimiter [null] - Délimiter entre `$str1` et `$str2`..
+ *
+ * @returns {String} Jointure du `$str1`, `$delimiter` and `$str2`.
+*/
+/*------------------------------------*\
+  #SECTION-BREAKPOINT
+\*------------------------------------*/
+/*
+ * Une liste de points d'arrêt nommés. Vous pouvez les utiliser avec le mixin `breakpoint()`
+ * pour créer rapidement des media queries.
+ * @type Map
+*/
+/*
+ * Une liste de points d'arrêt HiDPI nommés. Vous pouvez les utiliser avec le mixin `breakpoint()` pour créer rapidement des requêtes média pour les résolutions
+ * Les valeurs doivent représenter le rapport pixels de l'appareil / pixels du web et être sans unité ou en DPPX.
+ * @type Map
+ */
+/*
+ *  Le plus grand point d'arrêt nommé dans lequel inclure l'impression comme type de média.
+ *  @type Keyword
+ */
+/*
+ * Trouver le numéro suivant dans une carte.
+ * @access private
+ *
+ * @param {Map} $map - Carte à parcourir.
+ * @param {Mixed} $number - Numéro à utiliser comme point de départ.
+ * @returns {Mixed} Le nombre suivant `$number`, si `$number` a été trouvé. Si `$number` n'a pas été trouvé, ou si `$number` était le plus grand nombre de la carte, retourne `null`.
+*/
+/*
+ * Trouver la clé suivante dans une carte.
+ * @access private
+ *
+ * @param {Map} $map - Map à traverser.
+ * @param {Mixed} $key - Key to use as a starting point.
+ *
+ * @returns {Mixed} La valeur de la clé après `$key`, si `$key` a été trouvé. Si `$key` n'a pas été trouvé, ou si `$key` était la dernière valeur dans la carte, retourne `null`.
+ */
+/*
+ * Renvoie la chaîne de requête média à partir des limites min et/ou max données.
+ * Si une limite est égale à `null` ou `0`, elle est ignorée.
+ * @access private
+ *
+ * @param {Number} $min [0] - Limite minimale du  médias.
+ * @param {Number} $max [0] - Limite maximal du médias.
+ * @param {String} $min-name ['min-width'] - Nom de la limite minimale de la media query.
+ * @param {String} $delimiter ['max-width'] - Nom de la limite maximale de la media query.
+ *
+ * @returns {String} Media Query string.
+ */
+/*
+ *  Génère une chaîne de requête média correspondant à la valeur d'entrée. Reportez-vous à la documentation de la mixine `breakpoint()` pour voir quelles sont les entrées possibles.
+ *
+ *  @param {Keyword|Number} $val [small] -  Nom du point d'arrêt, ou valeur px, rem, ou em à traiter.
+ */
+/*
+ *  Enveloppe une requête média autour du contenu que vous placez dans le mixin. Ce mixin accepte un
+ *  certain nombre de valeurs :
+ *     - Si une chaîne est passée, le mixin la cherchera dans les cartes `$breakpoints`
+ *       et `$breakpoints-hidpi`,  et y utilisera une requête média.
+ *     - Si une valeur en pixels est passée, elle sera convertie en une valeur em en utilisant
+ *       $global-font-size` comme base.
+ *     - Si une valeur rem est passée, l'unité sera changée en em.
+ *     - Si une valeur em est passée, la valeur sera utilisée telle quelle.
+ *  Si plusieurs valeurs sont transmises, le mixin générera une requête média pour chacune d'entre elles,
+ *  comme décrit ci-dessus.
+ *  Le contenu étant dupliqué pour chaque point d'arrêt, ce mixin ne doit être utilisé qu'avec des
+ *  propriétés qui changent d'un point d'arrêt à l'autre.
+ *
+ * @param {Keyword|Number} $values... - Nom du point d'arrêt ou valeur px/rem/em à traiter.
+ * @output Si le point d'arrêt est "0px et plus", le contenu est affiché tel quel. Sinon, le contenu est présenté dans une requête média.
+ */
+/*------------------------------------*\
+  #SECTION-OBJECT-PARAGRAPHE
+\*------------------------------------*/
+/*
+ * Line height à l'intérieur des tags <p>
+ * @type Number
+ */
+/**
+  * Methode de rendu des paragraphe
+  * @type String
+*/
+/*
+ * Margin bottom d'un paragraphe
+ */
+/*------------------------------------*\
+  #SECTION-OBJECT-HEADER
+\*------------------------------------*/
+/**
+  * Bottom margin des headers.
+  * @type Number
+*/
+/**
+ * Font weight des headers.
+ * @type Keyword
+ */
+/**
+  * Couleur des headings.
+  * @type Color
+ */
+/**
+ * Font family pour les headings elements
+ *  @type String | List
+ */
+/**
+  * Line height des headers
+  * @type Number
+ */
+/*
+  * Styles à appliquer pour une variété d'écran. Chaque clées est un breakpoint, et chaque valeur
+  * correspond à un map des heading styles
+  * @type Map
+ */
+/**
+  * Methode de rendu des headings
+  * @type String
+ */
+/*------------------------------------*\
+  #SECTION-ANCHOR
+\*------------------------------------*/
+/**
+  * Couleur par défaut de liens
+  * @type Color
+ */
+/**
+  * Couleur par défaut des liens en hover
+  * @type Color
+ */
+/**
+  * Text decoration pour les liens.
+  * @type String
+ */
+/* Text decoration pour les liens en hover.
+ * @type String
+ */
+/*------------------------------------*\
+  #SECTION-CONSTRUCT-TYPOGRAPHY
+
+ // Application des styles au tags HTML, incluant :
+ //  - Paragraph <p>
+ //  - Headings <h1>-<h6>
+\*------------------------------------*/
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: inherit;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: inherit;
+  text-rendering: optimiseLegibility;
+}
+
+h1, .h1 {
+  font-size: 24;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h2, .h2 {
+  font-size: 20;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h3, .h3 {
+  font-size: 19;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h4, .h4 {
+  font-size: 18;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h5, .h5 {
+  font-size: 17;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h6, .h6 {
+  font-size: 16;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+@media print, screen and (min-width: 640em) {
+  h1, .h1 {
+    font-size: 48;
+  }
+
+  h2, .h2 {
+    font-size: 40;
+  }
+
+  h3, .h3 {
+    font-size: 31;
+  }
+
+  h4, .h4 {
+    font-size: 25;
+  }
+
+  h5, .h5 {
+    font-size: 20;
+  }
+
+  h6, .h6 {
+    font-size: 16;
+  }
+}
+a {
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover, a:focus {
+  color: #7280a7;
+}
+a img {
+  border: 0;
+}
+
+/*
+ * Dépendances
+ */
+/*------------------------------------*\
+  #SECTION-NORMALIZE
+\*------------------------------------*/
+/**
+ * Generic
+ */
+/**
+ * Global styles
+ */
+/*------------------------------------*\
+  #SECTION-GLOBAL
+\*------------------------------------*/
+/**
+ * Global font size attribué aux tags <body> et <html>. Tout les navigateurs hériteront de cette
+ * valeur par défaut
+ * @type Number
+ */
+/**
+ * Line height par défaut. `$global-line-height`est de 24px tant que `$global-font-size` est de 16px
+ * @type Number
+ */
+/**
+ * Couleur utilisé pour les boutons, les liens ect. La palette doivent toujours avoir une couleur
+ * appelé primary
+ * @type Map
+ */
+/**
+ * Couleurs utilisées pour le gris ( light, medium, dark)
+ * @type Map
+*/
+/**
+  * Liste des polices au sein du body
+  * @type List
+*/
+/**
+  * Background color pour le body
+  * @type Color
+ */
+/**
+  * Global valeur margin pour les composantes
+  * @type Number
+ */
+/**
+ * Le cursor du bouton doit être en auto par défaut
+ * @type Keyword
+ */
+/**
+  * Global valeur padding pour les composantes
+  * @type Number
+ */
+/**
+  * Global font weight pour les fonts de normal
+  * @type Keyword | Number
+ */
+/**
+  * Global font weight pour les font en gras
+  * @type Keyword | Number
+ */
+/**
+  * Global valeur utilisé pour tout les éléments ayant un border radius
+  * @type Number
+ */
+/**
+  * Global text direction. On peut utilisé 'ltr' or 'rtl'.
+  * @type Keyword
+ */
+/**
+  * Active les flexbox pour les composants qui les supportent
+  * @type Boolean
+ */
+/**
+ *  Variable utilisé pour les text-direction
+*/
+
+/*# sourceMappingURL=style.map */

@@ -1,0 +1,26 @@
+/*----------------------------------------*\
+  #PROTOTYPE-DISPLAY
+\*----------------------------------------*/
+
+/*
+ * Map contenant toute les classes utilitaires `display`
+ * @type Map
+ */
+$prototype-display: (
+        inline,
+        inline-block,
+        block,
+        table,
+        table-cell,
+        flex
+) !default;
+
+/*
+ * Génère toutes les classes `display`
+ */
+@each $display in $prototype-display {
+  .display-#{$display} {
+    display: $display !important;
+  }
+}
+

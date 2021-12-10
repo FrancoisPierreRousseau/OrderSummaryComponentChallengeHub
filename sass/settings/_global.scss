@@ -1,0 +1,103 @@
+@use "sass:map";
+
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+$font-size: 100% !default;
+
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+$lineheight: 1.5 !default;
+
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+$palette-light: (
+        primary: hsl(225, 100%, 94%),
+        neutral: hsl(225, 100%, 98%),
+) !default;
+
+$palette: (
+        neutral: hsl(224, 23%, 55%),
+) !default;
+
+$palette-dark: (
+        primary: hsl(245, 75%, 52%),
+        neutral: hsl(223, 47%, 23%),
+) !default;
+
+
+/*
+ * Couleur utilisée pour les éléments gris de l'interface utilisateur
+ * @type: Map
+ */
+$gray: (
+        light: hsla(0, 0%, 90%, 1),
+        medium: hsla(0, 0%, 79%, 1),
+        dark: hsla(0, 0%, 54%, 1),
+) !default;
+
+/*
+ * Liste de polices du body
+ * @type List
+ */
+$font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif !default;
+
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+$margin: 1rem !default;
+
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+$padding: 1rem !default;
+
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+$weight-normal: 500 !default;
+
+/*
+ * Background color du body
+ * @type Color
+ */
+$body-background: map.get($palette-light, primary) !default;
+
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+$body-font-family: $font-family !default;
+
+/*
+ * Couleur du texte du body.
+ * @type Color
+ */
+$body-font-color: map.get($gray, dark) !default;
+
+
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+$button-cursor: auto !default;
+
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+$radius: .8rem;
+
+

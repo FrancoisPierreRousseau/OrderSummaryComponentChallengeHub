@@ -1,0 +1,12 @@
+/*----------------------------------------*\
+  #TYPOGRAPHY-ALIGNEMENT
+\*----------------------------------------*/
+
+/*
+ * Génère l'ensemble des classe utilitaires permettant l'alignement du text
+ */
+@each $align in (left, right, center, justify) {
+  .text-#{$align}{
+    text-align: $align !important;
+  }
+}
