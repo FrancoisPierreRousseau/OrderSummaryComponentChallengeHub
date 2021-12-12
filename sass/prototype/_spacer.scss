@@ -17,57 +17,89 @@
  *   - Class (optionnel): Customisation de la class. Si c'est appliqué, cela serra `class-property`
  *                        (ex: display-flex)
  *   - Base: Quelles sont les différents espacement impacté ( ici margin-top, margin-bottom ou les deux ect.).
- *           1-Haut 2-droite 3-bas 4-gauche ( pour les margins)
+ *           margin: 1-Haut 2-droite 3-bas 4-gauche, padding: 1-Haut 2-droit 3-Bas 4-Gauche
  *   - Values: Valeur que la property prendra ( une valeur = une classe utilitaire) :
  *             Chaque clés au sein de ces valeurs feront partie intégrante de la classe
  * @type Map
  */
 $schema-spacer: (
         "no-margin": (
-                responsive: true,
                 property: margin,
                 space-position: 1 2 3 4,
                 values: 0
         ),
         "margin": (
-                responsive: true,
                 property: margin,
                 space-position: 1 2 3 4,
                 values: spacer.$spacer
         ),
         "margin-x": (
-                responsive: true,
                 property: margin,
                 space-position: 2 4,
                 values: spacer.$spacer
         ),
         "margin-y": (
-                responsive: true,
                 property: margin,
                 space-position: 1 2,
                 values: spacer.$spacer
         ),
         "margin-top": (
-                responsive: true,
                 property: margin,
                 space-position: 1,
                 values: spacer.$spacer
         ),
         "margin-end": (
-                responsive: true,
                 property: margin,
                 space-position: 2,
                 values: spacer.$spacer
         ),
         "margin-bottom": (
-                responsive: true,
                 property: margin,
                 space-position: 3,
                 values: spacer.$spacer
         ),
         "margin-start": (
-                responsive: true,
                 property: margin,
+                space-position: 4,
+                values: spacer.$spacer
+        ),
+        "no-padding": (
+                property: margin,
+                space-position: 1 2 3 4,
+                values: 0
+        ),
+        "padding": (
+                property: padding,
+                space-position: 1 2 3 4,
+                values: spacer.$spacer
+        ),
+        "padding-x": (
+                property: padding,
+                space-position: 2 4,
+                values: spacer.$spacer
+        ),
+        "padding-y": (
+                property: padding,
+                space-position: 1 2,
+                values: spacer.$spacer
+        ),
+         "padding-top": (
+                property: padding,
+                space-position: 1,
+                values: spacer.$spacer
+        ),
+        "padding-end": (
+                property: padding,
+                space-position: 2,
+                values: spacer.$spacer
+        ),
+        "padding-bottom": (
+                property: padding,
+                space-position: 3,
+                values: spacer.$spacer
+        ),
+        "padding-start": (
+                property: padding,
                 space-position: 4,
                 values: spacer.$spacer
         )

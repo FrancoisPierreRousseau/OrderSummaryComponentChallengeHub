@@ -18,13 +18,13 @@ $radius: global.$radius!default;
  * Couleur de fond par défaut des cards.
  * @type Color
  */
-$background: map.get(global.$palette-light, neutral) !default;
+$background: map.get(global.$palette, light, neutral, color) !default;
 
 /*
  * Largeur maximal des cards
  * @type Number
  */
-$max-width: 19rem !default;
+$max-width: 22rem !default;
 
 /*
  * Valeur globale utilisée concernant le rembourrage des cards
@@ -65,10 +65,7 @@ $el-background-size: cover !default;
 
 /*
  * Valeur utilisée pour fixer la margin tout en haut et tou a gauche de la card
- * 1. haut
- * 2. droite
- * 3. bas
- * 4. gauche
+ * 1.haut 2.droite 3.bas 4.gauche
  * @type List
  */
 $el-background-margin: -1rem 0rem 1rem -1rem !default;
@@ -100,10 +97,5 @@ $el-background-height: 10rem;
  * Valeur de la taille de police de la carte
  * @Number
  */
-$el-title-font-size: 1.374rem;
+$el-title-font-size: 1.5rem;
 
-/*
- * Couleur du titre de la carte.
- * @type Color
- */
-$el-title-color: hsl(222, 43%, 20%);

@@ -20,30 +20,42 @@ $lineheight: 1.5 !default;
  * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
  * Il doit toujours y avoir une couleur appelée `primary`.
  */
-$palette-light: (
-        primary: hsl(225, 100%, 94%),
-        neutral: hsl(225, 100%, 98%),
-) !default;
-
 $palette: (
-        neutral: hsl(224, 23%, 55%),
-) !default;
-
-$palette-dark: (
-        primary: hsl(245, 75%, 52%),
-        neutral: hsl(223, 47%, 23%),
-) !default;
-
-
-/*
- * Couleur utilisée pour les éléments gris de l'interface utilisateur
- * @type: Map
- */
-$gray: (
-        light: hsla(0, 0%, 90%, 1),
-        medium: hsla(0, 0%, 79%, 1),
-        dark: hsla(0, 0%, 54%, 1),
-) !default;
+   light:(
+      primary: (
+         color: hsl(225, 100%, 94%),
+      ),
+      neutral: (
+         color: hsl(225, 100%, 98%),
+      ),
+   ),
+   medium: (
+      neutral: (
+         color: hsl(224, 23%, 55%),
+      )
+   ),
+   dark: (
+      primary: (
+         color: hsl(245, 75%, 52%),
+         hover: hsl(245, 83%, 68%),
+      ),
+      neutral: (
+         color: hsl(223, 47%, 23%),
+      ),
+   ),
+   gray: (
+      light: (
+         color: hsla(0, 0%, 90%, 1)
+      ),
+      medium: (
+         color: hsla(0, 0%, 79%, 1),
+      ),
+      dark: (
+         color: hsla(227, 14%, 53%, 1),
+         hover: hsla(222, 43%, 20%, 1),
+      )
+   )
+);
 
 /*
  * Liste de polices du body
@@ -73,7 +85,7 @@ $weight-normal: 500 !default;
  * Background color du body
  * @type Color
  */
-$body-background: map.get($palette-light, primary) !default;
+$body-background: map.get($palette, light, primary, color) !default;
 
 /*
  * Liste de polices du corps.
@@ -85,7 +97,7 @@ $body-font-family: $font-family !default;
  * Couleur du texte du body.
  * @type Color
  */
-$body-font-color: map.get($gray, dark) !default;
+$body-font-color: map.get($palette, gray, dark, color) !default;
 
 
 /*

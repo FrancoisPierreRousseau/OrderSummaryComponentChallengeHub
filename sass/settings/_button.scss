@@ -41,7 +41,7 @@ $fill: solid !default;
  * Couleur de fond par défaut des boutons.
  * @type Color
  */
-$background: map.get(global.$palette-dark, primary) !default;
+$background: map.get(global.$palette, dark, primary, color) !default;
 
 /*
  * Couleur de fond au survol pour les boutons.
@@ -53,7 +53,7 @@ $background-hover: hsl(245, 83%, 68%) !default;
  * Couleur de la police pour les boutons.
  * @type List
  */
-$color: map.get(global.$palette-light, primary) !default;
+$color: map.get(global.$palette, light, primary, color) !default;
 
 /*
  * Border for buttons, transparent by default

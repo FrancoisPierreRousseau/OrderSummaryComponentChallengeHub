@@ -12,11 +12,11 @@
  */
 .card {
   background: card.$background;
-  @include rfs(card.$radius, border-radius);
+  border-radius: card.$radius;
   max-width: card.$max-width;
   padding: card.$padding;
   color: card.$font-color;
-  @include rfs(card.$shadow, box-shadow);
+  box-shadow: card.$shadow;
   margin: card.$margin;
 }
 
@@ -39,8 +39,11 @@
   border-radius: card.$el-background-radius;
 }
 
-.card__title{
-  @include font-size(card.$el-title-font-size);
-  color: card.$el-title-color;
+/*
+ * Taille de police principal de la card
+ */
+.card__title {
+  font-size: card.$el-title-font-size;
 }
+
 

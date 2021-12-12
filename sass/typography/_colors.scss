@@ -1,0 +1,23 @@
+@use "sass:map";
+
+@use "../settings/global";
+
+/*-----------------------------------------------*\
+  #TYPOGRAPHY-COLORS
+
+  Définition des couleurs de text / liens possible
+\*------------------------------------------------*/
+
+@each $theme, $theme-color in global.$palette {
+  @each $color, $value in $theme-color {
+    .link-#{$theme}-#{$color} {
+      color: map.get($value, color);
+
+      &:hover,
+      &:focus{
+        color: map.get($value, hover);
+      }
+    }
+  }
+}
+
