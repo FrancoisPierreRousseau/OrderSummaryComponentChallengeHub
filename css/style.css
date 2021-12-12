@@ -361,12 +361,24 @@ a img {
 .link-light-primary {
   color: #e0e8ff;
 }
+.text-light-primary {
+  color: #e0e8ff;
+}
+
 .link-light-neutral {
   color: #f5f7ff;
 }
+.text-light-neutral {
+  color: #f5f7ff;
+}
+
 .link-medium-neutral {
   color: #7280a7;
 }
+.text-medium-neutral {
+  color: #7280a7;
+}
+
 .link-dark-primary {
   color: #3829e0;
 }
@@ -374,19 +386,46 @@ a img {
   color: #756af1;
 }
 
+.text-dark-primary {
+  color: #3829e0;
+}
+
 .link-dark-neutral {
   color: #1f2f56;
 }
+.text-dark-neutral {
+  color: #1f2f56;
+}
+
 .link-gray-light {
   color: #e6e6e6;
 }
+.text-gray-light {
+  color: #e6e6e6;
+}
+
 .link-gray-medium {
   color: #c9c9c9;
 }
+.text-gray-medium {
+  color: #c9c9c9;
+}
+
 .link-gray-dark {
   color: #767e98;
 }
 .link-gray-dark:hover, .link-gray-dark:focus {
+  color: #1d2a49;
+}
+
+.text-gray-dark {
+  color: #767e98;
+}
+
+.link-black-dark {
+  color: #1d2a49;
+}
+.text-black-dark {
   color: #1d2a49;
 }
 
@@ -395,6 +434,24 @@ a img {
 \*------------------------------------*/
 .underline {
   text-decoration: underline;
+}
+
+/*------------------------------------------------*\
+  #TYPOGRAPHY-FONT-WEIGHT
+
+  Génération des classes permettant de modifier
+  le poids des polices de caractères
+\*-----------------------------------------------*/
+.font-weight-bold {
+  font-weight: 900 !important;
+}
+
+.font-weight-semi-bold {
+  font-weight: 700 !important;
+}
+
+.font-weight-normal {
+  font-weight: 500 !important;
 }
 
 /*------------------------------------*\
@@ -713,8 +770,9 @@ button {
  *   - Property: Nom de la property. Cela serra également le nom de la class par défaut
  *   - Class (optionnel): Customisation de la class. Si c'est appliqué, cela serra `class-property`
  *                        (ex: display-flex)
- *   - Base: Quelles sont les différents espacement impacté ( ici margin-top, margin-bottom ou les deux ect.).
- *           margin: 1-Haut 2-droite 3-bas 4-gauche, padding: 1-Haut 2-droit 3-Bas 4-Gauche
+ *   - Space-position: Quelles sont les différents espacement impacté ( ici margin-top, margin-bottom ou les deux ect.).
+ *           margin: 1-Haut 2-droite 3-bas 4-gauche,
+ *           padding: 1-Haut 2-droit 3-Bas 4-Gauche
  *   - Values: Valeur que la property prendra ( une valeur = une classe utilitaire) :
  *             Chaque clés au sein de ces valeurs feront partie intégrante de la classe
  * @type Map
@@ -781,6 +839,168 @@ button {
 
 .padding-start {
   padding: 0 0 0 1rem !important;
+}
+
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Background color du body
+ * @type Color
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Couleur du texte du body.
+ * @type Color
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*-----------------------------------------------*\
+  #TYPOGRAPHY-COLORS
+
+  Définition des couleurs de text / liens possible
+\*------------------------------------------------*/
+.background-light-primary {
+  background: #e0e8ff;
+}
+
+.background-light-neutral {
+  background: #f5f7ff;
+}
+
+.background-medium-neutral {
+  background: #7280a7;
+}
+
+.background-dark-primary {
+  background: #3829e0;
+}
+
+.background-dark-neutral {
+  background: #1f2f56;
+}
+
+.background-gray-light {
+  background: #e6e6e6;
+}
+
+.background-gray-medium {
+  background: #c9c9c9;
+}
+
+.background-gray-dark {
+  background: #767e98;
+}
+
+.background-black-dark {
+  background: #1d2a49;
+}
+
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Background color du body
+ * @type Color
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Couleur du texte du body.
+ * @type Color
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*-----------------------------------------------------------------*\
+  #PROTOTYPE-BORDER
+\*-----------------------------------------------------------------*/
+/*
+ * Schema CSS de l'ensemble des propriétés des margin ( qui me sont pour l'instant nécessaire) :
+ *   - Property: Nom de la property. Cela serra également le nom de la class par défaut
+ *   - Class (optionnel): Customisation de la class. Si c'est appliqué, cela serra `class-property`
+ *                        (ex: display-flex)
+ *   - Base: Quelles sont les différents espacement impacté ( ici margin-top, margin-bottom ou les deux ect.).
+ *           border radius position: 1. coin en haut à gauche, 2. coin en haut à droite,
+ *                                   3. coin en bas à droite, 4. coin en bas à gauche
+ *   - Values: Valeur que la property prendra ( une valeur = une classe utilitaire) :
+ *             Chaque clés au sein de ces valeurs feront partie intégrante de la classe
+ * @type Map
+ */
+.rounded {
+  border-radius: 0.8rem 0.8rem 0.8rem 0.8rem !important;
 }
 
 /*------------------------------------*\
@@ -1001,7 +1221,6 @@ button {
 /*-----------------------------------------------------------------*\
   #SETTINGS-CARD
 
-  -----------------------------------------------------------------
   Permet de paramétré les propriétés appliqué au sein des cartes
 \*-----------------------------------------------------------------*/
 /*
@@ -1075,7 +1294,7 @@ button {
  * Structure principale des cards par défaut
  */
 .card {
-  background: #f5f7ff;
+  background: white;
   border-radius: 0.8rem;
   max-width: 22rem;
   padding: 1rem;

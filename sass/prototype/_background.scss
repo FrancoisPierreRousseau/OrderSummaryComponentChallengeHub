@@ -10,17 +10,8 @@
 
 @each $theme, $theme-color in global.$palette {
   @each $color, $value in $theme-color {
-    .link-#{$theme}-#{$color} {
-      color: map.get($value, color);
-
-      &:hover,
-      &:focus {
-        color: map.get($value, hover);
-      }
-    }
-
-    .text-#{$theme}-#{$color} {
-      color: map.get($value, color);
+    .background-#{$theme}-#{$color} {
+      background: map.get($value, color);
     }
   }
 }

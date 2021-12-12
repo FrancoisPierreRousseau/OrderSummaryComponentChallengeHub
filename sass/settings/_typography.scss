@@ -21,7 +21,7 @@ $header-font-weight: 900 !default;
  * Couleur des en-têtes.
  * @type Color
  */
-$header-color: hsla(222, 43%, 20%, 1) !default;
+$header-color: map.get(global.$palette, "black", "dark", color) !default;
 
 /*
  * Hauteur de ligne des en-têtes.
@@ -83,13 +83,13 @@ $paragraph-text-rendering: optimizeLegibility !default;
  *  Couleur par défaut pour les liens.
  *  @type Color
  */
-$anchor-color: map.get(global.$palette, gray, dark, color) !default;
+$anchor-color: map.get(global.$palette, "gray", "dark", color) !default;
 
 /*
  * Couleur par défaut des liens au survol.
  * @type Color
  */
-$anchor-color-hover: map.get(global.$palette, gray, dark, hover) !default;
+$anchor-color-hover: map.get(global.$palette, "gray", "dark", hover) !default;
 
 /*
  * Décoration de texte par défaut pour les liens.

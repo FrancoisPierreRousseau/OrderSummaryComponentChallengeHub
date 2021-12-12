@@ -4,7 +4,6 @@
 /*-----------------------------------------------------------------*\
   #SETTINGS-CARD
 
-  -----------------------------------------------------------------
   Permet de paramétré les propriétés appliqué au sein des cartes
 \*-----------------------------------------------------------------*/
 
@@ -12,13 +11,13 @@
  * Arrondis les bords des cards
  * @type Number
  */
-$radius: global.$radius!default;
+$radius: global.$radius !default;
 
 /*
  * Couleur de fond par défaut des cards.
  * @type Color
  */
-$background: map.get(global.$palette, light, neutral, color) !default;
+$background: white !default;
 
 /*
  * Largeur maximal des cards

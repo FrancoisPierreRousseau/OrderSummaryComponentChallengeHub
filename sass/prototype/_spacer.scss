@@ -16,8 +16,9 @@
  *   - Property: Nom de la property. Cela serra également le nom de la class par défaut
  *   - Class (optionnel): Customisation de la class. Si c'est appliqué, cela serra `class-property`
  *                        (ex: display-flex)
- *   - Base: Quelles sont les différents espacement impacté ( ici margin-top, margin-bottom ou les deux ect.).
- *           margin: 1-Haut 2-droite 3-bas 4-gauche, padding: 1-Haut 2-droit 3-Bas 4-Gauche
+ *   - Space-position: Quelles sont les différents espacement impacté ( ici margin-top, margin-bottom ou les deux ect.).
+ *           margin: 1-Haut 2-droite 3-bas 4-gauche,
+ *           padding: 1-Haut 2-droit 3-Bas 4-Gauche
  *   - Values: Valeur que la property prendra ( une valeur = une classe utilitaire) :
  *             Chaque clés au sein de ces valeurs feront partie intégrante de la classe
  * @type Map
@@ -123,8 +124,6 @@ $schema-spacer: (
   // Initialisation d'une variable qui stockera les espacement
   $spaces: 0 0 0 0;
 
-  $number-position: 4;
-  $index: 1;
   // set-nth(10px 20px 30px, 1, 2em)
   @each $position in $space-position {
     $spaces: list.set-nth($spaces, $position, $value);

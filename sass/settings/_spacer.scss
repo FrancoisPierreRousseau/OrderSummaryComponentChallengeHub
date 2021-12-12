@@ -10,7 +10,7 @@
  * Espacement principal baser que la margin globale ( 1rem = font-size 100% = 16px )
  * @type Number
  */
-$spacer: global.$margin;
+$spacer: global.$margin !default;
 
 
 

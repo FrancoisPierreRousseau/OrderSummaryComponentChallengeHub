@@ -21,39 +21,44 @@ $lineheight: 1.5 !default;
  * Il doit toujours y avoir une couleur appelée `primary`.
  */
 $palette: (
-   light:(
-      primary: (
+   "light":(
+      "primary": (
          color: hsl(225, 100%, 94%),
       ),
-      neutral: (
+      "neutral": (
          color: hsl(225, 100%, 98%),
       ),
    ),
-   medium: (
-      neutral: (
+   "medium": (
+      "neutral": (
          color: hsl(224, 23%, 55%),
       )
    ),
-   dark: (
-      primary: (
+   "dark": (
+      "primary": (
          color: hsl(245, 75%, 52%),
          hover: hsl(245, 83%, 68%),
       ),
-      neutral: (
+      "neutral": (
          color: hsl(223, 47%, 23%),
       ),
    ),
-   gray: (
-      light: (
+   "gray": (
+      "light": (
          color: hsla(0, 0%, 90%, 1)
       ),
-      medium: (
+      "medium": (
          color: hsla(0, 0%, 79%, 1),
       ),
-      dark: (
+      "dark": (
          color: hsla(227, 14%, 53%, 1),
          hover: hsla(222, 43%, 20%, 1),
-      )
+      ),
+    ),
+   "black": (
+       "dark": (
+          color: hsla(222, 43%, 20%, 1),
+       )
    )
 );
 
@@ -85,7 +90,7 @@ $weight-normal: 500 !default;
  * Background color du body
  * @type Color
  */
-$body-background: map.get($palette, light, primary, color) !default;
+$body-background: map.get($palette, "light", "primary", color) !default;
 
 /*
  * Liste de polices du corps.
@@ -97,7 +102,7 @@ $body-font-family: $font-family !default;
  * Couleur du texte du body.
  * @type Color
  */
-$body-font-color: map.get($palette, gray, dark, color) !default;
+$body-font-color: map.get($palette, "gray", "dark", color) !default;
 
 
 /*
