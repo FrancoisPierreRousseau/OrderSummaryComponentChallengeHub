@@ -11,6 +11,8 @@ $prototype-sizing: (
         height
 ) !default;
 
+
+
 /*
  * Map contenant toute les tailles
  * @type Map
@@ -31,3 +33,6 @@ $prototype-sizes: (
   }
 }
 
+.vh-100{
+  height: 100vh;
+}

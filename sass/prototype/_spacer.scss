@@ -24,85 +24,75 @@
  * @type Map
  */
 $schema-spacer: (
-        "no-margin": (
-                property: margin,
-                space-position: 1 2 3 4,
-                values: 0
-        ),
         "margin": (
                 property: margin,
                 space-position: 1 2 3 4,
-                values: spacer.$spacer
+                values: spacer.$spacers
         ),
         "margin-x": (
                 property: margin,
                 space-position: 2 4,
-                values: spacer.$spacer
+                values: spacer.$spacers
         ),
         "margin-y": (
                 property: margin,
                 space-position: 1 2,
-                values: spacer.$spacer
+                values: spacer.$spacers
         ),
         "margin-top": (
                 property: margin,
                 space-position: 1,
-                values: spacer.$spacer
+                values: spacer.$spacers
         ),
         "margin-end": (
                 property: margin,
                 space-position: 2,
-                values: spacer.$spacer
+                values: spacer.$spacers
         ),
         "margin-bottom": (
                 property: margin,
                 space-position: 3,
-                values: spacer.$spacer
+                values: spacer.$spacers
         ),
         "margin-start": (
                 property: margin,
                 space-position: 4,
-                values: spacer.$spacer
-        ),
-        "no-padding": (
-                property: margin,
-                space-position: 1 2 3 4,
-                values: 0
+                values: spacer.$spacers
         ),
         "padding": (
                 property: padding,
                 space-position: 1 2 3 4,
-                values: spacer.$spacer
+                values: spacer.$spacers
         ),
         "padding-x": (
                 property: padding,
                 space-position: 2 4,
-                values: spacer.$spacer
+                values: spacer.$spacers
         ),
         "padding-y": (
                 property: padding,
                 space-position: 1 2,
-                values: spacer.$spacer
+                values: spacer.$spacers
         ),
-         "padding-top": (
+        "padding-top": (
                 property: padding,
                 space-position: 1,
-                values: spacer.$spacer
+                values: spacer.$spacers
         ),
         "padding-end": (
                 property: padding,
                 space-position: 2,
-                values: spacer.$spacer
+                values: spacer.$spacers
         ),
         "padding-bottom": (
                 property: padding,
                 space-position: 3,
-                values: spacer.$spacer
+                values: spacer.$spacers
         ),
         "padding-start": (
                 property: padding,
                 space-position: 4,
-                values: spacer.$spacer
+                values: spacer.$spacers
         )
 );
 
@@ -110,7 +100,7 @@ $schema-spacer: (
 @each $key, $utility in $schema-spacer {
 
   // Récupération des valeurs pour les placer au sein des classes,
-  $value: map.get($utility, values);
+  $values: map.get($utility, values);
 
   // Récupération des différentes espacements impactés ( margin bottom ? margin left ?)
   $space-position: map.get($utility, space-position);
@@ -124,17 +114,18 @@ $schema-spacer: (
   // Initialisation d'une variable qui stockera les espacement
   $spaces: 0 0 0 0;
 
-  // set-nth(10px 20px 30px, 1, 2em)
-  @each $position in $space-position {
-    $spaces: list.set-nth($spaces, $position, $value);
-  }
+  @each $size, $value in $values {
 
-  // Si `$key` est pas null alors le class serra composé de la clé
-  $property-class-modifier: if($key != null, #{$key}, $property-class);
-  // Si `$value`est null alors il n'y a pas de clés au sein de la map, donc `$value` vaudra `$key`
-  $value: if($value == null, $key, $value);
+    // set-nth(10px 20px 30px, 1, 2em)
+    @each $position in $space-position {
+      $spaces: list.set-nth($spaces, $position, $value);
+    }
 
-  .#{$property-class-modifier} {
-    #{$property}: #{$spaces} !important;
+    // Si `$key` est pas null alors le class serra composé de la clé
+    $property-class-modifier: if($key != null, #{$key}, $property-class);
+
+    .#{$property-class-modifier}-#{$size} {
+      #{$property}: #{$spaces} !important;
+    }
   }
 }
